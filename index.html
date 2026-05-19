@@ -36,11 +36,50 @@
             <a class="secondary-link" href="#practice">Перейти к практике</a>
           </div>
         </div>
-        <div class="code-panel" aria-label="Пример Python кода">
-          <div class="panel-header">
-            <span></span><span></span><span></span>
+        <div class="hero-visual" aria-label="Визуальный пример аналитического отчета GUDINI">
+          <div class="dashboard-card">
+            <div class="dashboard-top">
+              <div>
+                <span class="mini-label">GUDINI report</span>
+                <strong>Продажи за неделю</strong>
+              </div>
+              <span class="status-pill">Python</span>
+            </div>
+            <div class="metric-row">
+              <div>
+                <span>Выручка</span>
+                <strong>842K</strong>
+              </div>
+              <div>
+                <span>Заказы</span>
+                <strong>1 284</strong>
+              </div>
+              <div>
+                <span>CR</span>
+                <strong>6.8%</strong>
+              </div>
+            </div>
+            <div class="chart" aria-hidden="true">
+              <span style="height: 42%"></span>
+              <span style="height: 58%"></span>
+              <span style="height: 36%"></span>
+              <span style="height: 72%"></span>
+              <span style="height: 64%"></span>
+              <span style="height: 88%"></span>
+              <span style="height: 76%"></span>
+            </div>
+            <div class="insight-row">
+              <span>top_source</span>
+              <strong>organic_search</strong>
+              <em>+18%</em>
+            </div>
           </div>
-          <pre><code>import pandas as pd
+
+          <div class="code-panel compact-code">
+            <div class="panel-header">
+              <span></span><span></span><span></span>
+            </div>
+            <pre><code>import pandas as pd
 
 orders = pd.read_csv("orders.csv")
 orders["revenue"] = orders["price"] * orders["quantity"]
@@ -56,6 +95,7 @@ report = (
 )
 
 print(report)</code></pre>
+          </div>
         </div>
       </section>
 
