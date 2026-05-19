@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GUDINI — Python курс для аналитика данных</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="GUDINI">
+        <span class="brand-mark">G</span>
+        <span>GUDINI</span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#roadmap">План</a>
+        <a href="#modules">Курс</a>
+        <a href="#practice">Практика</a>
+        <a href="#project">Проект</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">GUDINI • обучение на Python</p>
+          <h1>Python для аналитика данных</h1>
+          <p class="hero-text">
+            GUDINI — это курс для новичка, который хочет научиться работать с
+            данными на Python: писать код, очищать таблицы, считать метрики,
+            строить графики, проверять гипотезы и делать первые ML-модели.
+            Каждый блок объясняет тему простыми словами и сразу дает практику.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-link" href="#modules">Открыть курс</a>
+            <a class="secondary-link" href="#practice">Перейти к практике</a>
+          </div>
+        </div>
+        <div class="code-panel" aria-label="Пример Python кода">
+          <div class="panel-header">
+            <span></span><span></span><span></span>
+          </div>
+          <pre><code>import pandas as pd
+
+orders = pd.read_csv("orders.csv")
+orders["revenue"] = orders["price"] * orders["quantity"]
+
+report = (
+    orders.groupby("traffic_source")
+    .agg(
+        orders=("order_id", "nunique"),
+        revenue=("revenue", "sum"),
+        avg_check=("revenue", "mean"),
+    )
+    .sort_values("revenue", ascending=False)
+)
+
+print(report)</code></pre>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Краткая информация о курсе">
+        <div>
+          <strong>10</strong>
+          <span>блоков от нуля до ML</span>
+        </div>
+        <div>
+          <strong>50+</strong>
+          <span>заданий на Python</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>без лишних инструментов</span>
+        </div>
+        <div>
+          <strong>1</strong>
+          <span>финальный проект</span>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-heading">
+          <p class="eyebrow">Маршрут GUDINI</p>
+          <h2>Как устроен курс</h2>
+          <p>
+            Курс идет от простого к сложному. Сначала ты учишься мыслить как
+            программист на Python, затем работаешь с таблицами и графиками, а
+            в конце переходишь к статистике и базовым моделям машинного обучения.
+          </p>
+        </div>
+        <div class="roadmap">
+          <article>
+            <span>01</span>
+            <h3>Python-основа</h3>
+            <p>Переменные, типы данных, условия, циклы, функции, файлы и ошибки.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Аналитика данных</h3>
+            <p>NumPy, pandas, очистка, группировки, сводные таблицы и графики.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Статистика и ML</h3>
+            <p>Метрики, гипотезы, A/B-тесты, sklearn, обучение и оценка моделей.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section learning-rules">
+        <div class="section-heading">
+          <p class="eyebrow">Как учиться</p>
+          <h2>Правила прохождения</h2>
+        </div>
+        <div class="rule-grid">
+          <article>
+            <h3>1. Сначала понять</h3>
+            <p>Перед кодом прочитай объяснение: что делает инструмент, зачем он нужен аналитику и какую проблему решает.</p>
+          </article>
+          <article>
+            <h3>2. Потом повторить</h3>
+            <p>Запусти пример кода у себя. Измени числа, названия колонок и условия, чтобы увидеть, как меняется результат.</p>
+          </article>
+          <article>
+            <h3>3. Потом решить задачу</h3>
+            <p>Практика закрепляет тему. Если задача не получается, разбей ее на маленькие шаги и проверь каждый отдельно.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="modules">
+        <div class="section-heading split">
+          <div>
+            <p class="eyebrow">Программа</p>
+            <h2>Курс GUDINI по Python</h2>
+          </div>
+          <div class="filters" aria-label="Фильтр модулей">
+            <button class="filter-btn active" data-filter="all">Все</button>
+            <button class="filter-btn" data-filter="start">Старт</button>
+            <button class="filter-btn" data-filter="analysis">Анализ</button>
+            <button class="filter-btn" data-filter="ml">ML</button>
+          </div>
+        </div>
+
+        <div class="module-grid">
+          <article class="module-card" data-stage="start">
+            <div class="module-meta"><span>Блок 1</span><span>Старт</span></div>
+            <h3>Python и рабочая среда</h3>
+            <p><strong>Зачем:</strong> аналитик должен уметь запускать код и понимать, где появляется результат.</p>
+            <p><strong>Теория:</strong> Python выполняет команды сверху вниз. Код можно запускать в `.py` файле или в Jupyter Notebook. Notebook удобен для анализа: рядом живут код, таблицы, графики и выводы.</p>
+            <pre><code>name = "Dmitry"
+goal = "стать аналитиком данных"
+print(f"{name} учится, чтобы {goal}")</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> запускать Python, писать первые команды, читать ошибки.</li>
+              <li><strong>Практика:</strong> создай файл `start.py`, выведи имя, цель и количество часов учебы в неделю.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="start">
+            <div class="module-meta"><span>Блок 2</span><span>Старт</span></div>
+            <h3>Типы данных и расчеты</h3>
+            <p><strong>Зачем:</strong> все данные в аналитике имеют тип: число, текст, список, словарь или таблица.</p>
+            <p><strong>Теория:</strong> числа нужны для метрик, строки — для названий и категорий, списки — для наборов значений, словари — для объектов с признаками.</p>
+            <pre><code>prices = [1200, 900, 1500, 2100]
+orders_count = len(prices)
+revenue = sum(prices)
+avg_check = revenue / orders_count
+
+print(round(avg_check, 2))</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> хранить значения, считать сумму, среднее, максимум и минимум.</li>
+              <li><strong>Практика:</strong> создай список покупок и посчитай выручку, средний чек и самый дорогой заказ.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="start">
+            <div class="module-meta"><span>Блок 3</span><span>Старт</span></div>
+            <h3>Условия, циклы и функции</h3>
+            <p><strong>Зачем:</strong> аналитические расчеты часто повторяются, а решения зависят от условий.</p>
+            <p><strong>Теория:</strong> `if` помогает выбрать действие, `for` повторяет расчет для каждого элемента, функция превращает повторяемую логику в удобный инструмент.</p>
+            <pre><code>def conversion_rate(visits, orders):
+    if visits == 0:
+        return 0
+    return orders / visits * 100
+
+cr = conversion_rate(1500, 87)
+print(f"Конверсия: {cr:.2f}%")</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> писать условия, циклы и функции для метрик.</li>
+              <li><strong>Практика:</strong> напиши функции для конверсии, среднего чека и доли возвратов.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="analysis">
+            <div class="module-meta"><span>Блок 4</span><span>Анализ</span></div>
+            <h3>Файлы CSV и качество данных</h3>
+            <p><strong>Зачем:</strong> данные редко приходят идеальными. Их нужно загрузить, проверить и подготовить.</p>
+            <p><strong>Теория:</strong> CSV — обычный текстовый файл с таблицей. Перед анализом нужно найти пропуски, дубликаты, странные значения и неверные типы.</p>
+            <pre><code>import csv
+
+with open("sales.csv", encoding="utf-8") as file:
+    rows = list(csv.DictReader(file))
+
+empty_rows = [row for row in rows if row["price"] == ""]
+print(f"Строк с пустой ценой: {len(empty_rows)}")</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> читать CSV, проверять строки, находить проблемы в данных.</li>
+              <li><strong>Практика:</strong> найди пустые цены, отрицательные количества и повторяющиеся `order_id`.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="analysis">
+            <div class="module-meta"><span>Блок 5</span><span>Анализ</span></div>
+            <h3>NumPy для быстрых расчетов</h3>
+            <p><strong>Зачем:</strong> NumPy быстро считает большие наборы чисел и лежит в основе многих библиотек анализа.</p>
+            <p><strong>Теория:</strong> массив NumPy похож на список, но умеет выполнять операции сразу над всеми элементами без ручных циклов.</p>
+            <pre><code>import numpy as np
+
+revenue = np.array([1200, 900, 1500, 2100, 700])
+
+print(np.mean(revenue))
+print(np.median(revenue))
+print(np.percentile(revenue, 90))</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> считать среднее, медиану, процентили и отклонения.</li>
+              <li><strong>Практика:</strong> найди 90-й процентиль чеков и объясни, что он означает.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="analysis">
+            <div class="module-meta"><span>Блок 6</span><span>Анализ</span></div>
+            <h3>pandas: таблицы и группировки</h3>
+            <p><strong>Зачем:</strong> pandas — главный инструмент Python-аналитика для таблиц.</p>
+            <p><strong>Теория:</strong> `DataFrame` — это таблица. Через фильтры, новые колонки и `groupby` аналитик превращает сырые данные в отчет.</p>
+            <pre><code>import pandas as pd
+
+df = pd.read_csv("sales.csv")
+df["revenue"] = df["price"] * df["quantity"]
+
+city_report = (
+    df.groupby("city")["revenue"]
+    .sum()
+    .sort_values(ascending=False)
+)
+
+print(city_report.head())</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> фильтровать таблицы, создавать колонки, группировать данные.</li>
+              <li><strong>Практика:</strong> посчитай выручку по городам, категориям и источникам трафика.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="analysis">
+            <div class="module-meta"><span>Блок 7</span><span>Анализ</span></div>
+            <h3>Визуализация данных</h3>
+            <p><strong>Зачем:</strong> график помогает увидеть тренд, сравнение, выбросы и распределение быстрее, чем таблица.</p>
+            <p><strong>Теория:</strong> line chart показывает динамику, bar chart — сравнение категорий, histogram — распределение, heatmap — связь показателей.</p>
+            <pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.barplot(data=df, x="city", y="revenue", estimator=sum)
+plt.title("Выручка по городам")
+plt.xticks(rotation=30)
+plt.show()</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> выбирать тип графика и делать подписи понятными.</li>
+              <li><strong>Практика:</strong> построй график выручки по дням и диаграмму топ-5 категорий.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="analysis">
+            <div class="module-meta"><span>Блок 8</span><span>Анализ</span></div>
+            <h3>Статистика и A/B-тесты</h3>
+            <p><strong>Зачем:</strong> аналитик должен отличать реальное изменение от случайного шума.</p>
+            <p><strong>Теория:</strong> гипотеза — это проверяемое предположение. `p-value` помогает понять, насколько результат похож на случайность, но вывод всегда нужно писать человеческим языком.</p>
+            <pre><code>from scipy import stats
+
+control = [10, 12, 9, 11, 13, 10]
+test = [12, 14, 13, 15, 16, 14]
+
+result = stats.ttest_ind(control, test)
+print(result.pvalue)</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> формулировать гипотезы, считать p-value, писать вывод.</li>
+              <li><strong>Практика:</strong> проверь, вырос ли средний чек в тестовой группе.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="ml">
+            <div class="module-meta"><span>Блок 9</span><span>ML</span></div>
+            <h3>Подготовка данных к ML</h3>
+            <p><strong>Зачем:</strong> модель учится не на всей таблице сразу, а на признаках и целевой переменной.</p>
+            <p><strong>Теория:</strong> `X` — признаки, по которым модель делает прогноз. `y` — правильный ответ. Данные делят на train и test, чтобы честно проверить качество.</p>
+            <pre><code>from sklearn.model_selection import train_test_split
+
+features = ["age", "orders_count", "avg_check"]
+X = df[features]
+y = df["will_buy_again"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> выбирать признаки, выделять target, делать train/test split.</li>
+              <li><strong>Практика:</strong> подготовь таблицу клиентов для прогноза повторной покупки.</li>
+            </ul>
+          </article>
+
+          <article class="module-card" data-stage="ml">
+            <div class="module-meta"><span>Блок 10</span><span>ML</span></div>
+            <h3>Первая модель в scikit-learn</h3>
+            <p><strong>Зачем:</strong> ML помогает делать прогнозы: кто купит снова, какой будет спрос, где высокий риск оттока.</p>
+            <p><strong>Теория:</strong> модель обучается методом `.fit()`, делает прогноз через `.predict()`, а качество проверяется метриками: accuracy, precision, recall, MAE или RMSE.</p>
+            <pre><code>from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+predictions = model.predict(X_test)
+score = accuracy_score(y_test, predictions)
+
+print(f"Accuracy: {score:.2f}")</code></pre>
+            <ul>
+              <li><strong>Ты научишься:</strong> обучать модель, получать прогнозы, оценивать качество.</li>
+              <li><strong>Практика:</strong> сравни модель с простым baseline и напиши вывод для бизнеса.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section practice-section" id="practice">
+        <div class="section-heading">
+          <p class="eyebrow">Практика GUDINI</p>
+          <h2>Чек-лист заданий</h2>
+          <p>
+            Отмечай выполненные задания. Прогресс сохранится в браузере, чтобы
+            можно было закрыть страницу и вернуться позже.
+          </p>
+        </div>
+
+        <div class="progress-box">
+          <div>
+            <span id="progressText">0 из 10 блоков выполнено</span>
+            <strong id="progressPercent">0%</strong>
+          </div>
+          <div class="progress-track">
+            <span id="progressBar"></span>
+          </div>
+        </div>
+
+        <div class="practice-list">
+          <label><input type="checkbox" data-task="1" /> Установить Python, создать `start.py`, вывести имя, цель и учебный план.</label>
+          <label><input type="checkbox" data-task="2" /> Посчитать выручку, средний чек, минимум, максимум и количество заказов.</label>
+          <label><input type="checkbox" data-task="3" /> Написать функции для конверсии, среднего чека и процента возвратов.</label>
+          <label><input type="checkbox" data-task="4" /> Прочитать CSV через `csv`, найти пропуски, дубликаты и ошибки в числах.</label>
+          <label><input type="checkbox" data-task="5" /> С помощью NumPy посчитать среднее, медиану, 90-й процентиль и стандартное отклонение.</label>
+          <label><input type="checkbox" data-task="6" /> В pandas сгруппировать продажи по городам, категориям и источникам трафика.</label>
+          <label><input type="checkbox" data-task="7" /> Построить графики: динамика выручки, топ категорий, распределение чеков.</label>
+          <label><input type="checkbox" data-task="8" /> Провести простой A/B-тест и написать понятный вывод для менеджера.</label>
+          <label><input type="checkbox" data-task="9" /> Подготовить признаки для ML и разделить данные на train/test.</label>
+          <label><input type="checkbox" data-task="10" /> Обучить модель sklearn, оценить качество и сравнить с baseline.</label>
+        </div>
+      </section>
+
+      <section class="section" id="project">
+        <div class="final-project">
+          <div>
+            <p class="eyebrow">Финальный проект</p>
+            <h2>GUDINI Project: анализ продаж и прогноз повторной покупки</h2>
+            <p>
+              Финальная работа собирает весь курс в один понятный кейс. Ты
+              загружаешь таблицу заказов интернет-магазина, чистишь данные,
+              считаешь метрики, строишь графики, проверяешь гипотезу и обучаешь
+              модель, которая предсказывает вероятность повторной покупки.
+            </p>
+            <p>
+              Результат проекта: notebook или Python-скрипт, где есть код,
+              графики и короткие выводы простым языком. Такой проект можно
+              показать как первую работу в портфолио аналитика данных.
+            </p>
+          </div>
+          <div class="project-steps">
+            <span>1. Загрузить CSV в pandas</span>
+            <span>2. Проверить пропуски и дубликаты</span>
+            <span>3. Посчитать выручку, средний чек и конверсию</span>
+            <span>4. Построить графики для отчета</span>
+            <span>5. Проверить гипотезу через A/B-тест</span>
+            <span>6. Обучить ML-модель в sklearn</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>GUDINI • Python Data Analyst Course</span>
+      <a href="#top">Наверх</a>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
